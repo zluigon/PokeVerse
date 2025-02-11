@@ -1,0 +1,10 @@
+<mat-card class="pokemon-card">
+    <mat-card-header>
+      <mat-card-title>{{ pokemon.name | titlecase }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
+    <mat-card-content>
+      <p>ID: {{ pokemon.id }}</p>
+      <p>Types: <span *ngFor="let type of pokemon.types">{{ type.type.name | titlecase }} </span></p>
+    </mat-card-content>
+  </mat-card>
