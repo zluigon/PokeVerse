@@ -5,10 +5,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [PokemonListComponent, MatToolbarModule], // Import PokemonListComponent
+  imports: [PokemonListComponent, MatToolbarModule],
   templateUrl: './app.component.html',
   styles: [],
 })
 export class AppComponent {
-  title = 'pokemon-app';
+  title = 'PokeVerse';
 }

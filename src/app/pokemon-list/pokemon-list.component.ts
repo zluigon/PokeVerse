@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService, Pokemon } from '../pokemon.service'; // Import service and interface
-import { CommonModule } from '@angular/common'; // Import CommonModule
-import { PokemonCardComponent } from '../pokemon-card/pokemon-card.component'; // Import the card component
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; // Import MatProgressSpinnerModule
+import { PokemonService, Pokemon } from '../pokemon.service';
+import { CommonModule } from '@angular/common';
+import { PokemonCardComponent } from '../pokemon-card/pokemon-card.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-pokemon-list',
   standalone: true,
-  imports: [CommonModule, PokemonCardComponent, MatProgressSpinnerModule], // Import CommonModule and the card component
+  imports: [CommonModule, PokemonCardComponent, MatProgressSpinnerModule],
   templateUrl: './pokemon-list.component.html',
-  styleUrls: ['./pokemon-list.component.scss'],
+  styleUrls: ['./pokemon-list.component.css'],
 })
 export class PokemonListComponent implements OnInit {
   pokemons: Pokemon[] = [];
@@ -20,15 +20,13 @@ export class PokemonListComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
     this.pokemonService.getPokemonList().subscribe({
-      // Use getPokemonList
       next: (response) => {
         this.pokemons = response.results;
         this.loading = false;
       },
       error: (error) => {
         console.error('Error fetching pokemons', error);
-        this.loading = false; // Even on error, stop showing the spinner.
-        // Optionally display an error message to the user.
+        this.loading = false;
       },
     });
   }

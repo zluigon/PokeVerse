@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { forkJoin, Observable, of } from 'rxjs'; // Import 'of'
-import { map, mergeMap, catchError } from 'rxjs/operators'; // Import catchError
+import { forkJoin, Observable, of } from 'rxjs';
+import { map, mergeMap, catchError } from 'rxjs/operators';
 
 export interface Pokemon {
   name: string;
@@ -19,7 +19,7 @@ export interface Pokemon {
 
 interface PokemonListResponse {
   results: Pokemon[];
-  next: string | null; // You might use this for pagination later
+  next: string | null;
 }
 
 @Injectable({
@@ -48,12 +48,12 @@ export class PokemonService {
         })),
         mergeMap((response) => {
           if (response.results.length === 0) {
-            return of({ ...response, results: [] }); // Handle empty results
+            return of({ ...response, results: [] });
           }
           const pokemonDetailsObservables = response.results.map((pokemon) =>
             this.getPokemonDetails(pokemon.id)
           );
-          return forkJoin(pokemonDetailsObservables).pipe(
+          return forkJoin<Pokemon[]>(pokemonDetailsObservables).pipe(
             map((details) => ({
               ...response,
               results: response.results.map((pokemon, index) => ({
