@@ -3,3 +3,29 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-list {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+mat-list mat-list-item {
+  font-weight: bold;
+  padding: 8px 16px;
+}
+
+mat-list mat-list-item:nth-child(odd) {
+  background-color: #e0e0e0;
+}
+
+.header {
+  font-size: 18px;
+  font-weight: bold;
+}

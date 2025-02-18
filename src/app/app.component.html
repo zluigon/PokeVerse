@@ -1,7 +1,15 @@
 <mat-toolbar color="primary">
   <span>{{ title }}</span>
-  <button mat-raised-button color="warn" [disabled]="(teamService.team().length < 2)">
+  <span class="spacer"></span>
+  <button mat-flat-button [disabled]="(teamService.team().length < 2)">
     Battle!
   </button>
 </mat-toolbar>
+
+<mat-list>
+  <div class="header" mat-subheader>Your Team:</div>
+  <mat-list-item *ngFor="let pokemon of teamService.team()">
+    {{ pokemon.name | titlecase }}
+  </mat-list-item>
+</mat-list>
 <app-pokemon-list></app-pokemon-list>

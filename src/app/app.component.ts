@@ -4,13 +4,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { TeamService } from './team.service';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [PokemonListComponent, MatToolbarModule],
+  imports: [PokemonListComponent, MatToolbarModule, MatButtonModule, CommonModule, MatListModule],
   templateUrl: './app.component.html',
-  styles: [],
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'PokeVerse';
