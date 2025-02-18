@@ -1,4 +1,7 @@
 <mat-toolbar color="primary">
   <span>{{ title }}</span>
+  <button mat-raised-button color="warn" [disabled]="(teamService.team().length < 2)">
+    Battle!
+  </button>
 </mat-toolbar>
 <app-pokemon-list></app-pokemon-list>
