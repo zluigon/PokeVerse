@@ -8,6 +8,7 @@
     <p>Types: <span *ngFor="let type of pokemon.types">{{ type.type.name | titlecase }} </span></p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-stroked-button (click)="addToTeam()">Add to Team</button>
+    <button mat-stroked-button (click)="addToTeam()" [disabled]="teamService.team().length >= teamService.teamSize()">Add to Team</button>
+
   </mat-card-actions>
 </mat-card>

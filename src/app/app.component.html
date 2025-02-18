@@ -9,7 +9,12 @@
 <mat-list>
   <div class="header" mat-subheader>Your Team:</div>
   <mat-list-item *ngFor="let pokemon of teamService.team()">
-    {{ pokemon.name | titlecase }}
+    <div class="listitem">
+      {{ pokemon.name | titlecase }}
+      <button mat-icon-button (click)="teamService.removeFromTeam(pokemon)">
+        <mat-icon aria-hidden="false" aria-label="delete icon" fontIcon="delete"></mat-icon>
+      </button>
+    </div>
   </mat-list-item>
 </mat-list>
 <app-pokemon-list></app-pokemon-list>

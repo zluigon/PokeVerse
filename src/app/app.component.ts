@@ -5,11 +5,12 @@ import { TeamService } from './team.service';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [PokemonListComponent, MatToolbarModule, MatButtonModule, CommonModule, MatListModule],
+  imports: [PokemonListComponent, MatToolbarModule, MatButtonModule, CommonModule, MatListModule, MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

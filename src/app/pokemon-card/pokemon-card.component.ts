@@ -15,17 +15,13 @@ import { TeamService } from '../team.service';
 export class PokemonCardComponent {
   @Input() pokemon!: Pokemon;
 
-  constructor(private teamService: TeamService) {}
+  constructor(public teamService: TeamService) {}
 
   addToTeam() {
     this.teamService.addToTeam(this.pokemon);
-    console.log('Added to team:', this.pokemon);
-    console.log('Team:', this.teamService.team());
   }
 
   removeFromTeam() {
     this.teamService.removeFromTeam(this.pokemon);
-    console.log('Removed from team:', this.pokemon);
-    console.log('Team:', this.teamService.team());
   }
 }

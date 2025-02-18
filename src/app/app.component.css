@@ -9,7 +9,7 @@
 }
 
 mat-list {
-  background-color: #f5f5f5;
+  background-color: #f0f0f0;
   border-radius: 4px;
   padding: 10px;
   max-width: 400px;
@@ -28,4 +28,15 @@ mat-list mat-list-item:nth-child(odd) {
 .header {
   font-size: 18px;
   font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+.listitem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
